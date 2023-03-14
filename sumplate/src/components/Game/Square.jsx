@@ -10,7 +10,7 @@ export const Square = (props) => {
             setState("");
         else if (state === "X")
             setState("O");
-        props.changeValue(props.index, state);
+        props.changeValue(props.index);
     }
     return (    
         <div className="square">
