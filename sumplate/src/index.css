@@ -33,6 +33,7 @@ code {
   height: 50px;
   z-index: 0;
   cursor: pointer;
+  
 }
 .square-button{
   position: absolute;
@@ -50,5 +51,21 @@ code {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+.row > span{
+  margin-left: 10px;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.result-row{
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+  margin-right: 20px;
   margin-top: 10px;
 }
