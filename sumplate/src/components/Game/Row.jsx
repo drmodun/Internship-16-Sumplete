@@ -5,9 +5,7 @@ export const Row = (props) =>{
     const [states , setStates] = useState([1, 1, 1]);
     const [values, setValues] = useState([props.values[0], props.values[1], props.values[2]]);
     function changeValue(index) {
-        if (states[index] === 1){
-            setStates(states.map((state, i) => i === index ? (state === 0 ? 1 : 0) : state));
-        }
+        setStates(states.map((state, i) => i === index ? (state === 0 ? 1 : 0) : state));
     } 
     useEffect(() =>{
         let sum = 0;
