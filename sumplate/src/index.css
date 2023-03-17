@@ -7,10 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+
 .overlay{
   position:absolute;
   top: 0;
@@ -69,4 +66,11 @@ code {
   justify-content: space-around;
   margin-right: 20px;
   margin-top: 10px;
+}
+h1{
+  font-size: 30px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  margin-right: 25px;
 }

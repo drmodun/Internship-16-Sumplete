@@ -39,4 +39,21 @@ export function Generate() {
         resultColumns.push(sum);
     }
     statesToWin = [...states]
+    return {
+        states,
+        values,
+        resultRows,
+        resultColumns
+    };
 }
+/*const newGame = Generate();
+      setValues(newGame.values);
+      setWinningStates(newGame.states);
+      setResultRows(newGame.resultRows);
+      setResultColumns(newGame.resultColumns);
+      setStates([
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1],
+      ]);
+      setCompleted(false);*/

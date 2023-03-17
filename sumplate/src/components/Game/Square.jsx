@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 
 export const Square = (props) => {
     const [state, setState] = useState("");
+    const [active, setActive] = useState(true);
     function handleClick() {
+        if (!active)
+            return;
         if (state === "") {
             setState("X");
             props.changeValue(props.index);
@@ -15,8 +18,10 @@ export const Square = (props) => {
         }
     }
     useEffect(() => {
-        if (props.initState !== "")
+        if (props.initState !== ""){
+            setActive(false);
             setState(props.initState);
+        }
     }, [props.initState])
     return (    
         <div className="square">
