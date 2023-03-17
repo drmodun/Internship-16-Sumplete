@@ -2,14 +2,16 @@ import { Row } from "./components/Game/Row";
 import { Square } from "./components/Game/Square";
 import "./index.css";
 import { useEffect, useState } from "react";
-import {values as initValues, resultRows as initResultRows, resultColumns as initResultColumns} from "./data.js";
+import {values as initValues, resultRows as initResultRows, resultColumns as initResultColumns, Generate as Reset, statesToWin as finishStates} from "./data.js";
 function App() {
+  console.log(finishStates, initResultColumns, initResultRows)
   const [values, setValues] = useState(initValues);
   const [states, setStates] = useState([
     [1, 1, 1],
     [1, 1, 1],
     [1, 1, 1],
   ]);
+  const winningStates = [...finishStates] 
   const [resultRows, setResultRows] = useState(initResultRows);
   const [resultColumns, setResultColumns] = useState(initResultColumns);
   useEffect(() => {

@@ -1,42 +1,22 @@
 export const values = []
 export const resultRows = []
 export const resultColumns = []
-function generateValues() {
-    for (let i = 0; i < 3; i++) {
-        let row = [];
-        for (let j = 0; j < 3; j++) {
-            row.push(Math.floor(Math.random() * 9)+1);
-        }
-        values.push(row);
-    }
-}
+export let statesToWin = []
+Generate();
 
-function generateResults() {
-   
-    for (let i = 0; i < 3; i++) {
-        let sum = 0;
-        for (let j = 0; j < 3; j++) {
-            sum += values[i][j];
-        }
-        resultRows.push(sum);
-    }
-    for (let i = 0; i < 3; i++) {
-        let sum = 0;
-        for (let j = 0; j < 3; j++) {
-            sum += values[j][i];
-        }
-        resultColumns.push(sum);
-    }
-}
-generate();
-
-function generate() {
-    for (let i = 0; i <= 3  - 1; i++) {
+export function Generate() {
+    const states = [
+        [1, 1, 1],
+        [1, 1, 1],
+        [1, 1, 1]
+    ];
+    for (let i = 0; i <= 3 - 1; i++) {
         const row = [];
         for (let j = 0; j <= 3 - 1; j++) {
-            let r;
-            r = Math.floor(Math.random() * 9) + 1;
-            row.push(r);
+            if (Math.random() > 0.5)
+                states[i][j] = 0;
+            let randomNumber = Math.floor(Math.random() * 9) + 1;
+            row.push(randomNumber);
         }
         values.push(row);
     }
@@ -44,7 +24,8 @@ function generate() {
     for (let i = 0; i <= 3 - 1; i++) {
         let sum = 0;
         for (let j = 0; j <= 3 - 1; j++) {
-            sum += values[i][j];
+            if (states[i][j] === 1)
+                sum += values[i][j];
         }
         resultRows.push(sum);
     }
@@ -52,8 +33,10 @@ function generate() {
     for (let j = 0; j <= 3 - 1; j++) {
         let sum = 0;
         for (let i = 0; i <= 3 - 1; i++) {
-            sum += values[j][i];
+            if (states[i][j] === 1)
+                sum += values[i][j];
         }
         resultColumns.push(sum);
     }
+    statesToWin = [...states]
 }
