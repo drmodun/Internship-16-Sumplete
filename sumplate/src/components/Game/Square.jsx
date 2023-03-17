@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Square = (props) => {
     const [state, setState] = useState("");
@@ -14,6 +14,10 @@ export const Square = (props) => {
             props.changeValue(props.index);
         }
     }
+    useEffect(() => {
+        if (props.initState !== "")
+            setState(props.initState);
+    }, [props.initState])
     return (    
         <div className="square">
             <div className = "overlay" style={{"color" : state === "X" ? "red" : "green"}}> 
