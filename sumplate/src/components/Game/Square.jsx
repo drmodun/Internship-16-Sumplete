@@ -5,12 +5,14 @@ export const Square = (props) => {
     function handleClick() {
         if (state === "") {
             setState("X");
+            props.changeValue(props.index);
         }
         else if (state === "O")
             setState("");
-        else if (state === "X")
+        else if (state === "X"){
             setState("O");
-        props.changeValue(props.index);
+            props.changeValue(props.index);
+        }
     }
     return (    
         <div className="square">
