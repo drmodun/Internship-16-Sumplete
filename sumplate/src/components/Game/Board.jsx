@@ -1,5 +1,4 @@
 import { Row } from "./Row";
-import { Square } from "./Square";
 import { useEffect, useState } from "react";
 export const Board = (props) => {
   const [values, setValue] = useState(props.initValues);
