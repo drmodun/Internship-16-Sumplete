@@ -28,7 +28,10 @@ export const Row = (props) => {
     useEffect(() => {
         if (props.completed){
             setDefStates(prev=>prev.map((state, i) => states[i] === 1 ? "O" : "X"));
+            return
         }
+        setDefStates(["", "", ""]);
+        setValues([props.values[0], props.values[1], props.values[2]]);
     }, [props.completed])
     return (
         <div className="row">

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 export const Square = (props) => {
     const [state, setState] = useState("");
     const [active, setActive] = useState(true);
+    const [value, setValue] = useState(props.value);
     function handleClick() {
         if (!active)
             return;
@@ -21,7 +22,11 @@ export const Square = (props) => {
         if (props.initState !== ""){
             setActive(false);
             setState(props.initState);
+            return
         }
+        setActive(true);
+        setState("");
+        setValue(props.value);
     }, [props.initState])
     return (    
         <div className="square">
@@ -29,7 +34,7 @@ export const Square = (props) => {
             {state}
             </div>
             <button className="square-button" onClick={handleClick}>
-                {props.value}
+                {value}
             </button>
         </div >
     );

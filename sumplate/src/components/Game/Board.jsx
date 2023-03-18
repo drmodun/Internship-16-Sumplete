@@ -2,16 +2,27 @@ import { Row } from "./Row";
 import { Square } from "./Square";
 import { useEffect, useState } from "react";
 export const Board = (props) => {
-  const [values, setValues] = useState(props.initValues);
+  const [values, setValue] = useState(props.initValues);
   const [states, setStates] = useState([
     [1, 1, 1],
     [1, 1, 1],
     [1, 1, 1],
   ]);
-  const [winningStates, setWinningStates ] = useState(props.finishStates)
+  const winningStates = props.finishStates
   const [resultRows, setResultRows] = useState(props.initResultRows);
   const [completed, setCompleted] = useState(false);
   const [resultColumns, setResultColumns] = useState(props.initResultColumns);
+  useEffect(() => {
+    setResultColumns(props.initResultColumns);
+    setResultRows(props.initResultRows);
+    setValue(props.initValues);
+    setStates([
+      [1, 1, 1],
+      [1, 1, 1],
+      [1, 1, 1],
+    ]);
+    setCompleted(false);
+  }, [props.initValues])
   useEffect(() => {
     console.log(states, winningStates)
     if (JSON.stringify(states) === JSON.stringify(winningStates)) {

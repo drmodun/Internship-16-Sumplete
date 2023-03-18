@@ -1,10 +1,14 @@
-export const values = []
-export const resultRows = []
-export const resultColumns = []
+export let values = []
+export let resultRows = []
+export let resultColumns = []
 export let statesToWin = []
 Generate();
 
 export function Generate() {
+    values = []
+    resultRows = []
+    resultColumns = []
+    statesToWin = []
     const states = [
         [1, 1, 1],
         [1, 1, 1],
@@ -56,4 +60,4 @@ export function Generate() {
         [1, 1, 1],
         [1, 1, 1],
       ]);
-      setCompleted(false);*/
+      setCompleted(false);*/ 
