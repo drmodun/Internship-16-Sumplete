@@ -74,3 +74,32 @@ h1{
   justify-content: center;
   margin-right: 25px;
 }
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.App > span{
+  margin-top: 10px;
+  font-size: 20px;
+  justify-content: center;
+  margin-right: 25px;
+}
+.App >button{
+  margin-top: 10px;
+  font-size: 20px;
+  justify-content: center;
+  margin-right: 25px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  border: hidden;
+  color: white;
+  border-radius: 10px;
+  transition: background-color 200ms linear;
+}
+.App >button:hover{
+  background-color: #3e8e41;
+  cursor: pointer;
+}

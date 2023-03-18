@@ -10,7 +10,7 @@ const App = () => {
     const [resultColumns, setResultColumns] = useState(initResultColumns);
     const [finishStates, setFinishStates] = useState(statesToWin);
     function finishedGame() {
-        setCompletedText("Zavrseno");
+        setCompletedText("Završeno");
         setButtonState("flex");
     }
     function newGame() {
@@ -24,10 +24,9 @@ const App = () => {
 
     }
     return (
-        <div>
+        <div className="App">
             <h1>Sumplete</h1>
             <Board finishedGame = {finishedGame} initValues={values} initResultRows = {resultRows} initResultColumns = {resultColumns} finishStates = {finishStates} >
-
             </Board>
             <span>{completedText}</span>
             <button style = {{display : buttonState}}onClick={newGame}>Reload game</button>
