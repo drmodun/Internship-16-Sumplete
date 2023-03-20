@@ -1,6 +1,6 @@
 import { Board } from "./components/Game/Board"
 import "./index.css";
-import { values as initValues, resultRows as initResultRows, resultColumns as initResultColumns, Generate as Reset, statesToWin as finishStates, resultRows, resultColumns, statesToWin } from "./data.js";
+import { values as initValues, resultRows as initResultRows, resultColumns as initResultColumns, Generate as Reset, statesToWin as finishStates,  statesToWin } from "./data.js";
 import { useState } from "react";
 const App = () => {
     const [completedText, setCompletedText] = useState("");
