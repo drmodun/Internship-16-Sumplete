@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { Square } from "./Square";
 export const Row = (props) => {
-    const [states, setStates] = useState([1, 1, 1]);
-    const [defStates, setDefStates] = useState(["", "", ""]);
-    const [values, setValues] = useState([props.values[0], props.values[1], props.values[2]]);
+    console.log(props)
+    const mode = props.mode;
+    const [states, setStates] = useState(()=>   
+        Array.from({length: mode}, () => 1));
+    const [defStates, setDefStates] = useState(()=>
+        Array.from({length: mode}, () => ""));
+    const [values, setValues] = useState(props.values);
     const [setHighlight, setSetHighlight] = useState("#808080");
     function changeValue(index) {
         props.changeValue(props.index, index);
@@ -15,10 +19,22 @@ export const Row = (props) => {
             setDefStates(prev=>prev.map((state, i) => states[i] === 1 ? "O" : "X"));
             return
         }
-        setDefStates(["", "", ""]);
+        setDefStates(()=>{
+            let temp = [];
+            for (let i = 0; i < mode; i++) {
+                temp.push("");
+            }
+            return temp;
+        })
         setSetHighlight("#808080");
-        setValues([props.values[0], props.values[1], props.values[2]]);
-        setStates([1, 1, 1]);
+        setValues(props.values);
+        setStates(()=>{
+            let temp = [];
+            for (let i = 0; i < mode; i++) {
+                temp.push(1);
+            }
+            return temp;
+        });
     }, [props.completed])
 
     useEffect(() => {
@@ -36,9 +52,8 @@ export const Row = (props) => {
     }, [states])
     return (
         <div className="row">
-            <Square index={0} changeValue={changeValue} value={values[0]} initState = {defStates[0]} />
-            <Square index={1} changeValue={changeValue} value={values[1]} initState = {defStates[1]}/>
-            <Square index={2} changeValue={changeValue} value={values[2]} initState = {defStates[2]}/>
+            {values.map((value, index) => { return <Square index={index} changeValue={changeValue} value={value} initState = {defStates[index]}></Square> }
+            )}
             <span style={{color : setHighlight}}>{props.result}</span>
         </div>
     );

@@ -61,11 +61,15 @@ body {
   margin-top: 10px;
 }
 .result-row{
-  width: 150px;
+  width: fit-content;
   display: flex;
   justify-content: space-around;
   margin-right: 20px;
   margin-top: 10px;
+}
+.result-row > span{
+  width: 50px;
+  text-align: center;
 }
 h1{
   font-size: 30px;
@@ -81,13 +85,13 @@ h1{
   align-items: center;
   margin-top: 10px;
 }
-.App > span{
+.board-element > span{
   margin-top: 10px;
   font-size: 20px;
   justify-content: center;
   margin-right: 25px;
 }
-.App >button{
+.board-element >button{
   margin-top: 10px;
   font-size: 20px;
   justify-content: center;
@@ -99,7 +103,46 @@ h1{
   border-radius: 10px;
   transition: background-color 200ms linear;
 }
-.App >button:hover{
+.board-element >button:hover{
+  background-color: #3e8e41;
+  cursor: pointer;
+}
+.game-mode-menu{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.game-mode-menu > select{
+  margin-top: 10px;
+  font-size: 16px;
+  justify-content: center;
+  margin-right: 25px;
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border: hidden;
+  color: black;
+  border-radius: 10px;
+  transition: background-color 200ms linear;
+}
+.game-mode-menu > select:hover{
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+.game-mode-menu > button{
+  margin-top: 10px;
+  font-size: 14px;
+  justify-content: center;
+  margin-right: 25px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  border: hidden;
+  color: white;
+  border-radius: 10px;
+  transition: background-color 200ms linear;
+}
+.game-mode-menu > button:hover{
   background-color: #3e8e41;
   cursor: pointer;
 }
