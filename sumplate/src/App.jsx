@@ -34,6 +34,8 @@ const App = () => {
         setFinishStates(newGame.states);
         setResultColumns(newGame.resultColumns);
         setGameActive(true);
+        setButtonState("none");
+        setCompletedText("");
         setMode(mode);
     }
     return (
