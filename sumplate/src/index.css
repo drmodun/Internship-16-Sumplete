@@ -95,11 +95,12 @@ h1 {
   margin-top: 10px;
 }
 
-.board-element .reload-button {
+.reload-button {
   margin-top: 10px;
+  display: flex;
   font-size: 20px;
   justify-content: center;
-  margin-left: 10px;
+  margin-right: 25px;
   padding: 5px 10px;
   background-color: #4CAF50;
   border: hidden;
@@ -107,8 +108,14 @@ h1 {
   border-radius: 10px;
   transition: background-color 200ms linear;
 }
-
-.board-element .reload-button:hover {
+.reload-game-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.reload-button:hover {
   background-color: #3e8e41;
   cursor: pointer;
 }
