@@ -6,7 +6,6 @@ Generate();
 
 export function Generate(mode) {
     values = []
-    console.log("mode", mode)
     resultRows = []
     resultColumns = []
     statesToWin = []

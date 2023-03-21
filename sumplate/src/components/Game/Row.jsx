@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { Square } from "./Square";
 export const Row = (props) => {
-    console.log(props)
     const mode = props.mode;
     const [states, setStates] = useState(() =>
         Array.from({ length: mode }, () => 1));
     const [defStates, setDefStates] = useState(() =>
         Array.from({ length: mode }, () => ""));
     const [values, setValues] = useState(props.values);
-    const [setHighlight, setSetHighlight] = useState("#808080");
+    const [setHighlight, setSetHighlight] = useState("#C0C0C0");
     function changeValue(index) {
         props.changeValue(props.index, index);
         setStates(prev => prev.map((state, i) => i === index ? (state === 0 ? 1 : 0) : state));
@@ -26,7 +25,7 @@ export const Row = (props) => {
             }
             return temp;
         })
-        setSetHighlight("#808080");
+        setSetHighlight("#C0C0C0");
         setValues(props.values);
         setStates(() => {
             let temp = [];
@@ -47,8 +46,7 @@ export const Row = (props) => {
         if (temp === props.result)
             setSetHighlight("black");
         else
-            setSetHighlight("#808080");
-        console.log(states, props.result)
+            setSetHighlight("#C0C0C0");
     }, [states])
     return (
         <div className="row">

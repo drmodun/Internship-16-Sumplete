@@ -18,7 +18,6 @@ const App = () => {
         setButtonState("flex");
     }
     function startGame(mode) {
-        console.log(mode)
         let newGame = Reset(mode);
         setValues(newGame.values);
         setResultRows(newGame.resultRows);

@@ -5,7 +5,6 @@ export const GameModeMenu = (props) => {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(mode);
         props.startGame(Number(mode));
     }
     return (
