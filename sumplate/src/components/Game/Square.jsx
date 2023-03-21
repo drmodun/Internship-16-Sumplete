@@ -13,13 +13,13 @@ export const Square = (props) => {
         }
         else if (state === "O")
             setState("");
-        else if (state === "X"){
+        else if (state === "X") {
             setState("O");
             props.changeValue(props.index);
         }
     }
     useEffect(() => {
-        if (props.initState !== ""){
+        if (props.initState !== "") {
             setActive(false);
             setState(props.initState);
             return
@@ -28,10 +28,10 @@ export const Square = (props) => {
         setState("");
         setValue(props.value);
     }, [props.initState])
-    return (    
+    return (
         <div className="square">
-            <div className = "overlay" style={{"color" : state === "X" ? "red" : "green"}}> 
-            {state}
+            <div className="overlay" style={{ "color": state === "X" ? "red" : "green" }}>
+                {state}
             </div>
             <button className="square-button" onClick={handleClick}>
                 {value}

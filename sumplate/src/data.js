@@ -55,14 +55,3 @@ export function Generate(mode) {
         resultColumns
     };
 }
-/*const newGame = Generate();
-      setValues(newGame.values);
-      setWinningStates(newGame.states);
-      setResultRows(newGame.resultRows);
-      setResultColumns(newGame.resultColumns);
-      setStates([
-        [1, 1, 1],
-        [1, 1, 1],
-        [1, 1, 1],
-      ]);
-      setCompleted(false);*/ 
